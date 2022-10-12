@@ -1,0 +1,232 @@
+/* Colores de css en variables */
+:root{
+    --blanco: #ffffff;
+    --negro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097A7;
+    --gris: #757575;
+}
+html {
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+/* Este scroll-snap-align: center;
+scroll-snap-stop: always; me ayudan a que el usuario pase por todas las secciones de mi web poniendole un stop al scroll del mause*/
+.servicios,
+.navegacion-principal, .form {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Krub', sans-serif;
+    /* linear-gradient me ayuda a ponerle un degradado a una parte del DOM de mi página*/
+    background-image: linear-gradient(to top, #DFE9F3 0%, var(--blanco) 100%);
+}
+h1{
+    font-size: 32px;
+    height: 27px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 18px;
+}
+h1,h2,h3{
+    text-align: center;
+}
+/* Clase contenedor herramienta para centrar */
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.sombra{
+    box-shadow: 0px 5px 15px 0px rgba(112, 112, 122, 0.54);
+    background-color: var(--blanco);
+    padding: 20px;
+    border-radius: 5px;
+}
+header h1 span{
+    font-size: 18px;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--negro);
+}
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 410px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.hero .contenedor-hero{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.650);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+}
+.hero-ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn-contactar{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .btn-contactar{
+        width: auto;
+    }
+}
+.btn-contactar:hover{
+    cursor: pointer;
+}
+/* Utilidades */
+.w-100 {
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-100{
+        width: auto;
+        margin-top: 40px;
+    }
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+/* .servicios {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 200px 800px;
+    !Para acortar estas lineas podemos hacer:
+    grid: 200px 800px / 300px 300px;
+} */
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 10px;
+    }
+}
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+.servicios .iconos{
+    height: 150px;
+    width: 150px;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* Contacto */
+.form {
+    background-color: var(--gris);
+    width: min(600px, 100% );
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+.form fieldset{
+    border: none;
+}
+.form legend {
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--primario);
+}
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto 200px;
+        column-gap: 10px;
+    }
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+        grid-column: 1 / 3;
+    }
+}
+.campo{
+    margin-bottom: 10px;
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.campo textarea{
+    height: 200px;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+}
+/* Footer */
+.footer{
+    text-align: center;
+}
